@@ -1,0 +1,29 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.ground {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.tank {
+  border-style: double;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100px;
+  height: 300px;
+}
+
+.fill {
+  background-color: rgb(0, 0, 255);
+  width: 100px;
+}
+
+.label {
+  text-align: left;
+}
