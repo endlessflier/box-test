@@ -1,22 +1,25 @@
 import React from "react";
+import {TANKS_DATA} from "./constant"
 
 function Tank(props) {
+  const tankData = TANKS_DATA[props.index];
+  console.log("redered begin", props.index);
   return (
     <div className="container">
       <button
         className="button"
         onClick={() => {
-          props.setDirection(props.tank.dir);
+          props.setDirection(tankData.dir);
         }}
       >
-        {props.tank.button}
+        {tankData.button}
       </button>
       <div className="tank">
         <div
           id="fill"
           className="fill"
           style={{
-            height: `${(props.tank.current * 300) / props.tank.volume}px`
+            height: `${(props.tank * 300) / tankData.volume}px`
           }}
         />
       </div>
@@ -26,12 +29,12 @@ function Tank(props) {
         style={{
           position: `relative`,
           left: `${110}px`,
-          top: `${-(props.tank.current * 300) / props.tank.volume}px`
+          top: `${-(props.tank * 300) / tankData.volume}px`
         }}
       >
-        {props.tank.current}
+        {props.tank}
       </div>
-      <div>{`${props.tank.current} of ${props.tank.volume}`}</div>
+      <div>{`${props.tank} of ${tankData.volume}`}</div>
     </div>
   );
 }
